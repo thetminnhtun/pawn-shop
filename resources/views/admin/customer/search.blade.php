@@ -45,9 +45,9 @@
                               </div>
 
                               <div class="form-group row">
-                                <label for="created_at" class="col-sm-4 col-form-label">ေန႔စြဲ</label>
+                                <label for="updated_at" class="col-sm-4 col-form-label">ေန႔စြဲ</label>
                                 <div class="col-sm-8">
-                                  <input type="date" class="form-control" id="created_at" name="created_at">
+                                  <input type="date" class="form-control" id="updated_at" name="updated_at">
                                 </div>
                               </div>
 

@@ -25,7 +25,7 @@ class CustomerController extends Controller
         $category        = \Request::get('category');
         $id              = \Request::get('id');
         $customerAddress = \Request::get('customerAddress');
-        $created_at      = \Request::get('created_at');
+        $updated_at      = \Request::get('updated_at');
         $loan            = \Request::get('loan');
         $q               = Input::get('q');
         if ($customerName) {
@@ -39,9 +39,9 @@ class CustomerController extends Controller
         } elseif ($customerAddress) {
             $customers  = Customer::where('customer_address', 'like', '%' . $customerAddress . '%')->orderBy('id', 'desc')->paginate(10);
             $pagination = $customers->appends(['customerAddress' => $customerAddress]);
-        } elseif ($created_at) {
-            $customers  = Customer::where('created_at', 'like', '%' . $created_at . '%')->orderBy('id', 'desc')->paginate(10);
-            $pagination = $customers->appends(['created_at' => $created_at]);
+        } elseif ($updated_at) {
+            $customers  = Customer::where('updated_at', 'like', '%' . $updated_at . '%')->orderBy('id', 'desc')->paginate(10);
+            $pagination = $customers->appends(['updated_at' => $updated_at]);
         } elseif ($loan) {
             $customers  = Customer::where('loan', 'like', '%' . $loan . '%')->orderBy('id', 'desc')->paginate(10);
             $pagination = $customers->appends(['loan' => $loan]);
